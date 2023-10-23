@@ -4,7 +4,7 @@
 # FakerData.destroy_all
 
 # Create 10 fake records for the FakerData model
-10.times do
+90.times do
   FakerDatum.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
