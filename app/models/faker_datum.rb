@@ -1,0 +1,2 @@
+class FakerDatum < ApplicationRecord
+end
