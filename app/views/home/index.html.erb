@@ -1,1 +1,12 @@
-<h1>Home Page</h1>
+<h1>Home</h1>
+<ul>
+  <% if @posts.present? %>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.title, post %>
+      </li>
+    <% end %>
+  <% else %>
+    <li>No posts available.</li>
+  <% end %>
+</ul>

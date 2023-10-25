@@ -4,10 +4,12 @@ one:
   name: MyString
   email: MyString
   bio: MyText
+  country: MyString
   image: MyString
 
 two:
   name: MyString
   email: MyString
   bio: MyText
+  country: MyString
   image: MyString
