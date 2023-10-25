@@ -10,36 +10,25 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/home/index">Navbar</a>
+        <a class="navbar-brand text-white" href="/home/index">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home/index">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/home/index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about/index">About</a>
+              <a class="nav-link text-white" href="/about/index">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts/index">Posts</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+              <a class="nav-link text-white" href="/posts/index">Create Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <a class="nav-link text-white" href="/users/index">Members</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -50,6 +39,8 @@
       </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <%= yield %>
+    <div class="mt-5 pt-2">
+      <%= yield %>
+    </div>
   </body>
 </html>

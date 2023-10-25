@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @faker_data = FakerDatum.all
+    @users = FakerDatum.all
   end
 end

@@ -1,23 +1,27 @@
-<h1>Home Page</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Bio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @faker_data.each do |data| %>
-      <tr>
-        <td>
-          <%= image_tag data.image, alt: data.name, style: "max-width: 100px;" %>
-        </td>
-        <td><%= data.name %></td>
-        <td><%= data.email %></td>
-        <td><%= data.bio %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <h1 class="mt-4">Members</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Bio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |data| %>
+            <tr>
+              <td><%= image_tag data.image, alt: data.name, style: "max-width: 100px;" %></td>
+              <td><%= data.name %></td>
+              <td><%= data.email %></td>
+              <td><%= data.bio %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
