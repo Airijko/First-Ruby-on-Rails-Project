@@ -48,7 +48,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-# installing faker gem
+gem 'bootstrap', '~> 5.1.3'
+
+gem 'htmlbeautifier'
+# Installing faker gem
 group :development, :test do
   gem 'faker'
 end
@@ -75,3 +78,7 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "cssbundling-rails", "~> 1.3"
+
+gem "jsbundling-rails", "~> 1.2"
