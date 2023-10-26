@@ -10,8 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_073645) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_26_075246) do
   create_table "continents", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,10 +33,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_073645) do
     t.string "name"
     t.string "email"
     t.text "bio"
-    t.string "country"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genders_id"
+    t.integer "country_id"
+    t.index ["country_id"], name: "index_users_on_country_id"
+    t.index ["genders_id"], name: "index_users_on_genders_id"
   end
 
+  add_foreign_key "users", "countries"
+  add_foreign_key "users", "genders", column: "genders_id"
 end
