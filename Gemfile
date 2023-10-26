@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.1.3'
-
+gem 'net-http'
 gem 'htmlbeautifier'
 # Installing faker gem
 group :development, :test do

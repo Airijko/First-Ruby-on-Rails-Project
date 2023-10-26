@@ -1,12 +1,2 @@
 <h1>Home</h1>
-<ul>
-  <% if @posts.present? %>
-    <% @posts.each do |post| %>
-      <li>
-        <%= link_to post.title, post %>
-      </li>
-    <% end %>
-  <% else %>
-    <li>No posts available.</li>
-  <% end %>
-</ul>
+<%= link_to 'Generate Random User', new_random_user_users_path, class: 'btn btn-primary' %>
