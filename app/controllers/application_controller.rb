@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
-    helper_method :get_all_users
+  helper_method :filter_users
 
-    def get_all_users
-        @all_users ||= User.all 
+  def filter_users(search_term)
+    if search_term.present?
+      User.where("name LIKE ?", "%#{search_term}%")
+    else
+      User.all
     end
+  end
 end
