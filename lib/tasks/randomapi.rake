@@ -7,13 +7,17 @@ namespace :db do
 
     10.times do
       response = HTTParty.get(randomapi_url)
-      user_data = JSON.parse(response.body)
+      user_data = JSON.parse(response.body)['results'][0]
+
+      first_name = user_data['name']['first']
+      last_name = user_data['name']['last']
+      image = user_data['picture']['large']
 
       User.create(
-        name: user_data['name'],
+        name: "#{first_name} #{last_name}",
         email: user_data['email'],
         bio: Faker::Lorem.paragraph,
-        image: Faker::Avatar.image,
+        image: image,
         genders_id: [1, 2].sample,
         country_id: rand(1..197)
       )
