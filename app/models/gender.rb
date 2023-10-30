@@ -1,3 +1,3 @@
 class Gender < ApplicationRecord
-    has_one :user, foreign_key: 'genders_id'
+    has_one :users, foreign_key: 'genders_id'
 end
