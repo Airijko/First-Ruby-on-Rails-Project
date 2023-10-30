@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_30_165205) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_170636) do
   create_table "continents", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,6 +40,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_30_165205) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "titles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_titles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "title_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title_id"], name: "index_user_titles_on_title_id"
+    t.index ["user_id"], name: "index_user_titles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -54,6 +69,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_30_165205) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "user_titles", "titles"
+  add_foreign_key "user_titles", "users"
   add_foreign_key "users", "countries"
   add_foreign_key "users", "genders", column: "genders_id"
 end
