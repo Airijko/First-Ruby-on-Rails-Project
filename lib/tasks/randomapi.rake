@@ -5,7 +5,7 @@ namespace :db do
 
     randomapi_url = 'https://randomuser.me/api/'
 
-    10.times do
+    20.times do
       response = HTTParty.get(randomapi_url)
       user_data = JSON.parse(response.body)['results'][0]
 

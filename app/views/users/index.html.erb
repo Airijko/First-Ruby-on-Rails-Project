@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Members</h1>
+  <div class="row">
+    <% @filtered_users.each do |data| %>
+      <div class="col-md-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h6 class="card-title"><%= data.name %></h6>
+            <%= link_to user_path(data) do %>
+              <%= image_tag data.image, alt: data.name, class: "card-img-top" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="pagination justify-content-center mb-5">
+    <%= paginate @filtered_users %>
+  </div>
+</div>
