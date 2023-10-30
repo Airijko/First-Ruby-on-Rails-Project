@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_075246) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_165205) do
   create_table "continents", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -29,6 +29,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_075246) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "creator"
+    t.string "title"
+    t.string "content"
+    t.string "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -42,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_075246) do
     t.index ["genders_id"], name: "index_users_on_genders_id"
   end
 
+  add_foreign_key "posts", "users"
   add_foreign_key "users", "countries"
   add_foreign_key "users", "genders", column: "genders_id"
 end
