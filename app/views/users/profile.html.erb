@@ -9,6 +9,13 @@
         <p class="card-text"><strong>Gender:</strong> <%= @gender_name %></p>
         <p class="card-text"><strong>Country:</strong> <%= @country_name %></p>
         <p class="card-text"><strong>Created At:</strong> <%= @user.created_at %></p>
+        <p class="card-text"><strong>Titles:</strong>
+          <% if @user.titles.present? %>
+            <%= @user.titles.map(&:name).join(', ') %>
+          <% else %>
+            No titles available
+          <% end %>
+        </p>
       </div>
     </div>
   </div>

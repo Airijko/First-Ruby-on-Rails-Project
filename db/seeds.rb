@@ -32,6 +32,6 @@ User.all.each do |user|
   num_titles_to_assign = rand(1..3)
   assigned_title_ids = title_ids.shuffle.take(num_titles_to_assign)
   assigned_title_ids.each do |title_id|
-    UserTitle.create(user: user, title_id: title_id)
+    UserTitle.create(user_id: user.id, title_id: title_id)
   end
 end
