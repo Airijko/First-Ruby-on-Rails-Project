@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-  <div class="col-md-4 mt-4">
+  <div class="col-md-4">
     <div class="card mb-4">
       <%= image_tag @user.image, alt: @user.name, class: "card-img-top" %>
       <div class="card-body">
@@ -8,7 +8,6 @@
         <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
         <p class="card-text"><strong>Gender:</strong> <%= @gender_name %></p>
         <p class="card-text"><strong>Country:</strong> <%= @country_name %></p>
-        <p class="card-text"><strong>Created At:</strong> <%= @user.created_at %></p>
         <p class="card-text"><strong>Titles:</strong>
           <% if @user.titles.present? %>
             <%= @user.titles.map(&:name).join(', ') %>
@@ -16,6 +15,7 @@
             No titles available
           <% end %>
         </p>
+        <p class="card-text"><strong>Created At:</strong> <%= @user.created_at %></p>
       </div>
     </div>
   </div>

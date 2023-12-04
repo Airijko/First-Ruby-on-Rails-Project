@@ -1,0 +1,10 @@
+<h2>Titles:</h2>
+<ul>
+  <% if @user.titles.present? %>
+    <% @user.titles.each do |title| %>
+      <li><%= link_to title.name, title_path(title) %></li>
+    <% end %>
+  <% else %>
+    <li>No titles available</li>
+  <% end %>
+</ul>
